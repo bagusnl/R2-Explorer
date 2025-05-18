@@ -10,10 +10,10 @@
         <small class="float-end">{{ emailData.date }}</small>
         <small class="text-muted">From: {{ emailData.from?.name }} &lt;{{ emailData.from?.address }}&gt;</small>
       </div>
-      
+
     </div>
     <div class="w-100">
-        <small class="text-muted">To: 
+        <small class="text-muted">To:
           <template v-for="recipient of emailData.to">
             {{ recipient.name }} &lt;{{ recipient.address }}&gt;&semi;
           </template>
@@ -56,33 +56,31 @@
 
 
 <script>
-const PostalMime = require('postal-mime');
-const { convert } = require('html-to-text');
+import { convert } from "html-to-text";
+import PostalMime from "postal-mime";
 
 export default {
-  props: ['filedata'],
-  data: function () {
-    return {
-      emailData: null
-    }
-  },
-  methods: {
-    async parseEmail() {
-      try {
-        const parser = new PostalMime.default();
-        const parsedEmail = await parser.parse(this.filedata);
+	props: ["filedata"],
+	data: () => ({
+		emailData: null,
+	}),
+	methods: {
+		async parseEmail() {
+			try {
+				const parser = new PostalMime.default();
+				const parsedEmail = await parser.parse(this.filedata);
 
-        this.emailData = parsedEmail;
-        if (parsedEmail.html) {
-          this.emailData.htmlAsText = convert(parsedEmail.html, {});
-        }
-      } catch (error) {
-        console.error('Error parsing email data:', error);
-      }
-    }
-  },
-  async mounted() {
-    await this.parseEmail();
-  }
-}
+				this.emailData = parsedEmail;
+				if (parsedEmail.html) {
+					this.emailData.htmlAsText = convert(parsedEmail.html, {});
+				}
+			} catch (error) {
+				console.error("Error parsing email data:", error);
+			}
+		},
+	},
+	async mounted() {
+		await this.parseEmail();
+	},
+};
 </script>

@@ -1,69 +1,134 @@
-[![Commit rate](https://img.shields.io/github/commit-activity/m/G4brym/R2-Explorer?label=Commits&style=social)](https://github.com/G4brym/R2-Explorer/commits/main) [![Issues](https://img.shields.io/github/issues/G4brym/R2-Explorer?style=social)](https://github.com/G4brym/R2-Explorer/issues) [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=social)](LICENSE)
-
-Read this in other languages: [Español](READMEes.md), [Português](READMEpt.md), [Français](READMEfr.md)
-
-# R2-Explorer
+<div align="center">
+  <a href="https://r2explorer.dev/">
+    <img src="https://raw.githubusercontent.com/G4brym/R2-explorer/refs/heads/main/packages/docs/pages/assets/r2-explorer-logo.png" width="500" height="auto" alt="R2-Explorer"/>
+  </a>
+</div>
 
 <p align="center">
     <em>A Google Drive Interface for your Cloudflare R2 Buckets!</em>
 </p>
 
-<p>
-  This project is deployed/self-hosted in your own Cloudflare Account as a Worker, and no credential/token is required to
-  start using it.
+<p align="center">
+    <a href="https://github.com/G4brym/R2-Explorer/commits/main" target="_blank">
+      <img src="https://img.shields.io/github/commit-activity/m/G4brym/R2-Explorer?label=Commits&style=social" alt="R2-Explorer Commits">
+    </a>
+    <a href="https://github.com/G4brym/R2-Explorer/issues" target="_blank">
+      <img src="https://img.shields.io/github/issues/G4brym/R2-Explorer?style=social" alt="Issues">
+    </a>
+    <a href="https://github.com/G4brym/R2-Explorer/blob/main/LICENSE" target="_blank">
+      <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=social" alt="Software License">
+    </a>
 </p>
 
----
+# R2-Explorer
 
-**Documentation**: <a href="https://r2explorer.dev" target="_blank">https://r2explorer.dev</a>
+R2-Explorer brings a familiar Google Drive-like interface to your Cloudflare R2 storage buckets, making file management simple and intuitive.
 
-**Live Demo**: <a href="https://demo.r2explorer.dev" target="_blank">https://demo.r2explorer.dev</a>
+## Quick Links
 
----
+- 📚 **Documentation**: [r2explorer.dev](https://r2explorer.dev)
+- 🎮 **Live Demo**: [demo.r2explorer.dev](https://demo.r2explorer.dev)
+- 💻 **Source Code**: [github.com/G4brym/R2-Explorer](https://github.com/G4brym/R2-Explorer)
 
-## Features
+Available in multiple languages:
+[English](https://r2explorer.dev) |
+[Español](https://r2explorer-dev.translate.goog/?_x_tr_sl=en&_x_tr_tl=es) |
+[Português](https://r2explorer-dev.translate.goog/?_x_tr_sl=en&_x_tr_tl=pt-PT) |
+[Français](https://r2explorer-dev.translate.goog/?_x_tr_sl=en&_x_tr_tl=fr)
 
-- PWA support (install this app on your phone)
-- [Email Explorer](https://r2explorer.dev/guides/setup-email-explorer/) (using Cloudflare Email Routing)
-- [Basic Auth](https://r2explorer.dev/getting-started/security/#basic-auth)
-- [Cloudflare Access Authentication](https://r2explorer.dev/getting-started/security/)
-- Very quick bucket/folder navigation
-- pdf, image, txt, markdown, csv, etc in-browser preview
-- Drag-and-Drop upload
-- Multiple files and folder uploads
-- Create folders
-- Upload/Rename/Download/Delete files
-- Right click in file for extra options
-- Multipart upload for big files
+## Overview
 
-## Getting Started
+R2-Explorer transforms your Cloudflare R2 storage experience with a modern, user-friendly interface. It provides powerful file management capabilities while maintaining enterprise-grade security through Cloudflare's infrastructure.
 
-Run this command to get an example project setup
+## Key Features
 
-```bash
-npm create r2-explorer@latest
-```
+- **🔒 Security**
+  - Basic Authentication support
+  - Cloudflare Access integration
+  - Self-hosted on your Cloudflare account
 
-## Upgrading your installation
+- **📁 File Management**
+  - Drag-and-drop file upload
+  - Folder creation and organization
+  - Multi-part upload for large files
+  - Right-click context menu for advanced options
+  - HTTP/Custom metadata editing
 
-In order to update to the latest version you just need to install the latest r2-explorer package from npm and re-deploy
-your application
+- **👀 File Handling**
+  - In-browser file preview
+    - PDF documents
+    - Images
+    - Text files
+    - Markdown
+    - CSV
+    - Logpush files
+  - In-browser file editing
+  - Folder upload support
+  
+- **📧 Email Integration**
+  - Receive and process emails via Cloudflare Email Routing
+  - View email attachments directly in the interface
 
-```bash
-npm install r2-explorer@latest --save
-```
+## Installation Methods
 
-```bash
-wrangler publish
-```
+Choose the method that best suits your needs:
 
-## TODO
+1. **GitHub Action (Recommended)**
+   ```bash
+   # Follow the guide at:
+   https://r2explorer.dev/getting-started/creating-a-new-project/#1st-method-github-action-recommended
+   ```
 
-- allow bucket names with spaces
-- Search files
-- Rename folders
-- Delete folders
-- Image thumbnail's using Cloudflare workers
-- Tooltip when hovering a file with absolute time in "x days time ago" format
-- bundle bootstrap icons instead of importing
-- support for responding to emails
+2. **Cloudflare CLI**
+   ```bash
+   # Follow the guide at:
+   https://r2explorer.dev/getting-started/creating-a-new-project/#2nd-method-create-cloudflare
+   ```
+
+3. **Template Repository**
+   ```bash
+   # Use our template at:
+   https://github.com/G4brym/R2-Explorer/tree/main/template
+   ```
+
+For detailed instructions on maintaining and updating your installation, visit our [update guide](https://r2explorer.dev/getting-started/updating-your-project/).
+
+## Roadmap
+
+We're actively working on these exciting features:
+
+- **File Management**
+  - Support for bucket names with spaces
+  - File search functionality
+  - Folder renaming capability
+  - Image thumbnails generation
+  
+- **AI Integration**
+  - Object detection using workers-ai
+  
+- **User Experience**
+  - Enhanced timestamp tooltips
+  - Email response capabilities
+  - Advanced file type-specific editing
+  
+## Known Issues
+
+- When using basic authentication, email inline images and assets don't load properly
+- Additional issues can be found and reported on our [GitHub Issues](https://github.com/G4brym/R2-Explorer/issues) page
+
+## Contributing
+
+We welcome contributions! Whether it's bug fixes, new features, or documentation improvements, please feel free to:
+
+1. Fork the repository
+2. Create a feature branch
+3. Submit a Pull Request
+
+## Support
+
+- 📚 Documentation: [r2explorer.dev](https://r2explorer.dev)
+- 🐛 Issue Tracker: [GitHub Issues](https://github.com/G4brym/R2-Explorer/issues)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

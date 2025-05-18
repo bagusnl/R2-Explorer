@@ -6,6 +6,7 @@ spa
 # local env files
 .env.local
 .env.*.local
+**/.env
 
 # Log files
 npm-debug.log*
@@ -25,11 +26,23 @@ pnpm-debug.log*
 # local tests
 my-r2-explorer
 
-worker/bin
-worker/README.md
-worker/LICENSE
+packages/worker/bin
+packages/worker/README.md
+packages/worker/LICENSE
+packages/worker/dist
+packages/worker/dashboard
+packages/worker/r2-explorer-*
 
-worker/dev/.wrangler
+packages/worker/dev/.wrangler
 
 packages/github-action/wrangler.toml
 packages/github-action/src
+
+packages/dashboard/.env
+packages/dashboard/.quasar
+.dev.vars
+
+template/package-lock.json
+template/node_modules/
+
+packages/docs/site
